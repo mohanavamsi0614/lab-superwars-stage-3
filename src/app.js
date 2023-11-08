@@ -43,6 +43,7 @@ const getRandomStrength = () => {
 
 // Build player template
 const buildPlayers = (players, type) => {
+  fragment=""
 
   // Instead of using for loop
   // Use chaining of Array methods - filter, map and join
@@ -50,13 +51,13 @@ const buildPlayers = (players, type) => {
   f = players.filter((v) => {
     return v.type ==type;
   }).map((i)=>{
-    return "<div class='player'>"+
-    "<img src="+i.img+" alt='hdewio'>"+
+    fragment+="<div class='player'>"+
+    "<img src="+i.img+" alt=''>"+
     "<div class='name'>"+i.name+"</div>"+
     "<div class='strength'>"+i.str+"</div>"+
- "</div>"   
+ "</div>"
   });
-  return f
+  return fragment
 };
 
 // Display players in HTML
